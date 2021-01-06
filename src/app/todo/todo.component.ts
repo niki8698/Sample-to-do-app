@@ -47,7 +47,7 @@ export class TodoComponent implements OnInit {
 
   }
   logout(){
-    //this.datas = null;
+    this.datas = null;
 
     localStorage.clear();
     this._router.navigate(['./login']);

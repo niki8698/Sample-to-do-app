@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthguardGuard} from '../authguard.guard'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo',
@@ -11,7 +12,7 @@ export class TodoComponent implements OnInit {
   public newTask;
   model ={};
 
-  constructor() { }
+  constructor(private _router:Router) { }
 
   ngOnInit(): void {
   }
@@ -45,6 +46,13 @@ export class TodoComponent implements OnInit {
 
 
   }
+  logout(){
+    this.datas = null;
+
+    localStorage.clear();
+    this._router.navigate(['./login']);
+  }
+
 
 
 
